@@ -77,7 +77,7 @@ module Uirusu
 				raise "Invalid API Key"
 			end
 				
-			response = RestClient.post SCAN_URL, :apikey => api_key, :filename=> path_to_file, :file => File.new(path_to_file, 'rb')
+			response = RestClient.post SCAN_URL, :allinfo => 1, :apikey => api_key, :filename=> path_to_file, :file => File.new(path_to_file, 'rb')
 			
 			case response.code
 				when 429

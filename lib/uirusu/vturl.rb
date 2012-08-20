@@ -77,7 +77,7 @@ module Uirusu
 				raise "Invalid resource, must be a valid url"
 			end
 			
-			response = RestClient.post REPORT_URL, :apikey => api_key, :resource => resource
+			response = RestClient.post REPORT_URL, :allinfo => 1, :apikey => api_key, :resource => resource
 			
 			case response.code
 				when 429
